@@ -1,0 +1,8 @@
+.hero-section {
+    background: url("public/FReshmart-gallery_3-100-768x512.jpeg") center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

@@ -1,0 +1,24 @@
+.veg-container {
+    background-image: url('public/fruits-and-vegetables_0.jpg'); /* Change to your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure full coverage */
+    padding: 20px;
+}
+
+.veg-title {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.veg-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 18rem;
+}
