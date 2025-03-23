@@ -53,20 +53,21 @@ function Cart() {
             alert("Your cart is empty!");
             return;
         }
-    
+
         const purchaseDate = new Date().toLocaleDateString();
         const purchaseTime = new Date().toLocaleTimeString();
-    
+
         let purchaseDetailsObject = {
             date: purchaseDate,
             time: purchaseTime,
             totalPrice: finalAmount,
             items: [...cartObjects],
         };
-    
+
         dispatch(addpurchasedetails(purchaseDetailsObject));
         dispatch(clearcart());
     };
+
     return (
         <div className="container mt-5">
             {cartObjects.length > 0 ? (
@@ -130,30 +131,17 @@ function Cart() {
                     </motion.h5>
 
                     <div className="mb-3">
-                        <motion.button 
-                            className="btn btn-outline-primary me-2" 
-                            onClick={() => { setDiscountPercentage(10); setShowDiscount(true); }} 
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            Apply 10%
-                        </motion.button>
-                        <motion.button 
-                            className="btn btn-outline-primary me-2" 
-                            onClick={() => { setDiscountPercentage(20); setShowDiscount(true); }} 
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            Apply 20%
-                        </motion.button>
-                        <motion.button 
-                            className="btn btn-outline-primary" 
-                            onClick={() => { setDiscountPercentage(30); setShowDiscount(true); }} 
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                        >
-                            Apply 30%
-                        </motion.button>
+                        {[10, 20, 30].map((discount) => (
+                            <motion.button 
+                                key={discount}
+                                className="btn btn-outline-primary me-2" 
+                                onClick={() => { setDiscountPercentage(discount); setShowDiscount(true); }} 
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                            >
+                                Apply {discount}%
+                            </motion.button>
+                        ))}
                     </div>
 
                     <div className="input-group mb-3">
